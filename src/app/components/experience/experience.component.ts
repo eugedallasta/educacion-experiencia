@@ -1,5 +1,6 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
 import { Experiencia } from 'src/app/models/iexperiencia';
 import { ExperienceService } from 'src/app/services/experience.service';
 
@@ -29,5 +30,7 @@ export class ExperienceComponent implements OnInit {
       },
     });
   }
+
+  onAddExperience(addForm:NgForm) {}
 
 }

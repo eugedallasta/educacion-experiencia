@@ -3,5 +3,5 @@ export interface Experiencia {
   descripcionExp: string;
   fechaExp: string;
   imageExp: string;
-  titulExp: string;
+  tituloExp: string;
 }
