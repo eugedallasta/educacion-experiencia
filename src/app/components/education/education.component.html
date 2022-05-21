@@ -88,6 +88,18 @@
                   placeholder="Año de egreso"
                 />
               </div>
+              <div class="form-group">
+                <label for="imagenEdu">Imagen del centro educativo</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="imagenEdu"
+                  name="imagenEdu"
+                  ngModel
+                  required
+                  placeholder="URL imagen del centro educativo"
+                />
+              </div>
               <div class="modal-footer">
                 <button
                   type="button"
@@ -116,12 +128,16 @@
   </div>
   <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
     <div class="col d-flex align-items-start" *ngFor="let item of education">
-      <div>
-        <h2>{{ item.tituloEdu }}</h2>
+      <div class="feature col">
+        <div class="d-inline-flex align-items-center justify-content-center fs-2 mb-3">
+          <img class="img-edu"  src="{{item.imagenEdu}}" alt="Imagen Educación">
+        </div>
+        <h4>{{ item.tituloEdu }}</h4>
         <p>
           <span class="fw-bolder">Universidad: </span>{{ item.descripcionEdu }}
         </p>
         <p><span class="fw-bolder">Año de egreso: </span>{{ item.fechaEdu }}</p>
+
         <!-- boton elimar -->
         <button
           type="button"
@@ -238,6 +254,18 @@
                       ngModel="{{ editEducation?.fechaEdu }}"
                       required
                       placeholder="Año de egreso"
+                    />
+                  </div>
+                  <div class="form-group">
+                    <label for="imagenEdu">Imagen del centro educativo</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="imagenEdu"
+                      name="imagenEdu"
+                      ngModel="{{ editEducation?.imagenEdu }}"
+                      required
+                      placeholder="URL imagen del centro educativo"
                     />
                   </div>
                   <div class="modal-footer">

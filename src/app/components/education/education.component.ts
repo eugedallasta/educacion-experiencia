@@ -39,13 +39,13 @@ export class EducationComponent implements OnInit {
     button.style.display = 'none';
     button.setAttribute('data-bs-toggle', 'modal');
     if(mode === 'add'){
-      button.setAttribute('data-bs-target', '#addEducationModal');
+
     }else if(mode === 'delete'){
       this.deleteEducation = education;
-      button.setAttribute('data-bs-target', '#deleteEducationModal');
+
     }else if(mode === 'edit'){
       this.editEducation = education;
-      button.setAttribute('data-bs-target', '#editEducationModal');
+
     }
     container?.appendChild(button);
     button.click();
@@ -56,7 +56,7 @@ export class EducationComponent implements OnInit {
     document.getElementById('add-education-form')?.click();
     this.educationService.addEducation(addForm.value).subscribe({
       next: (response: Educacion) => {
-        console.log(response);
+        alert('Se ha agregado Educación correctamente');
         this.getEducation();
         addForm.reset();
       },
@@ -72,7 +72,7 @@ export class EducationComponent implements OnInit {
     document.getElementById('edit-education-form')?.click();
     this.educationService.updateEducation(education).subscribe({
       next: (response: Educacion) => {
-        console.log(education);
+        alert('Se ha actualizado Educación correctamente');
         this.getEducation();
       },
       error: (error: HttpErrorResponse) => {
@@ -84,6 +84,7 @@ export class EducationComponent implements OnInit {
   public onDeleteEducation(idEdu:number):void{
     this.educationService.deleteEducation(idEdu).subscribe({
       next: (response: void) => {
+        alert('Se ha eliminado Educación correctamente');
         this.getEducation();
       },
       error: (error: HttpErrorResponse) => {
