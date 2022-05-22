@@ -16,4 +16,14 @@ export class ExperienceService {
   public getExperience():Observable<Experiencia[]>{
     return this.http.get<Experiencia[]>(`${this.apiServerUrl}experiencia/all`);
   }
+  public addExperience(experiencia:Experiencia):Observable<Experiencia>{
+    return this.http.post<Experiencia>(`${this.apiServerUrl}experiencia/add`,experiencia);
+  }
+  public updateExperience(experiencia:Experiencia):Observable<Experiencia>{
+    return this.http.put<Experiencia>(`${this.apiServerUrl}experiencia/update`,experiencia);
+  }
+
+  public deleteExperience(idExp:number):Observable<void>{
+    return this.http.delete<void>(`${this.apiServerUrl}experiencia/delete/${idExp}`);
+  }
 }

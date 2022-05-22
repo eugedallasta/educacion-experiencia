@@ -12,6 +12,8 @@ import { ExperienceService } from 'src/app/services/experience.service';
 export class ExperienceComponent implements OnInit {
 
   public experience: Experiencia[] = [];
+  public editExperience: Experiencia | undefined;
+  public deleteExperience: Experiencia | undefined;
 
   constructor(private experienceService:ExperienceService) { }
 
@@ -31,6 +33,62 @@ export class ExperienceComponent implements OnInit {
     });
   }
 
-  onAddExperience(addForm:NgForm) {}
+  public onOpenModal(mode:String, experience?:Experiencia):void{
+    const container = document.getElementById('main-container');
+    const button = document.createElement('button');
+    button.style.display = 'none';
+    button.setAttribute('data-bs-toggle', 'modal');
+    if(mode === 'add'){
+
+    }else if(mode === 'delete'){
+      this.deleteExperience = experience;
+
+    }else if(mode === 'edit'){
+      this.editExperience = experience;
+
+    }
+    container?.appendChild(button);
+    button.click();
+
+  }
+
+  onAddExperience(addForm:NgForm) {
+    document.getElementById('add-experience-form')?.click();
+    this.experienceService.addExperience(addForm.value).subscribe({
+      next: (response: Experiencia) => {
+        this.getExperience();
+        addForm.reset();
+      },
+      error: (error: HttpErrorResponse) => {
+        alert(error.message);
+        addForm.reset();
+      }
+    });
+  }
+
+  public onUpdateExperience(experience:Experiencia){
+    this.editExperience = experience;
+    document.getElementById('edit-experience-form')?.click();
+    this.experienceService.updateExperience(experience).subscribe({
+      next: (response: Experiencia) => {
+        this.getExperience();
+
+      },
+      error: (error: HttpErrorResponse) => {
+        alert(error.message);
+      }
+    });
+  }
+
+  public onDeleteExperience(idExp:number):void{
+    this.experienceService.deleteExperience(idExp).subscribe({
+      next: (response: void) => {
+        this.getExperience();
+      },
+      error: (error: HttpErrorResponse) => {
+        alert(error.message);
+      }
+    });
+  }
 
 }

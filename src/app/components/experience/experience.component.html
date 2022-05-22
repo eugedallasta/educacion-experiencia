@@ -14,7 +14,6 @@
           Añadir
         </button>
       </th>
-
       <th></th>
     </tr>
   </thead>
@@ -24,12 +23,12 @@
       <td>{{ item.tituloExp }}</td>
       <td>{{ item.fechaExp }}</td>
       <td>
-        <button class="btn btn-dark">
+        <button class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#editExperienceModal"  (click)="onOpenModal('edit', item)">
           <i class="fas fa-edit text-success"></i>
         </button>
       </td>
       <td>
-        <button class="btn btn-dark">
+        <button class="btn btn-dark" (click)="onDeleteExperience(item.idExp)">
           <i class="fas fa-trash-alt text-danger"></i>
         </button>
       </td>
@@ -39,7 +38,7 @@
   </tbody>
 </table>
 
-<!-- Modal añadir experiencia -->
+<!-- Modal AÑADIR experiencia -->
 <div
   class="modal fade"
   id="addExperienceModal"
@@ -52,71 +51,54 @@
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="addExperienceModalLabel">
-          Añadir Educación
+          Añadir Experiencia
         </h5>
-        <button
-          type="button"
-          class="btn-close"
-          data-dismiss="modal"
-          aria-label="Close"
-        ></button>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
         <form #addForm="ngForm" (ngSubmit)="onAddExperience(addForm)">
           <div class="form-group">
-            <label for="tituloEdu">Título</label>
+            <label for="descripcionExp">Empresa</label>
             <input
               type="text"
               class="form-control"
-              id="tituloEdu"
-              name="tituloEdu"
+              id="descripcionExp"
+              name="descripcionExp"
               ngModel
               required
-              placeholder="Título"
+              placeholder="Nombre de la empresa"
             />
           </div>
           <div class="form-group">
-            <label for="descripcionEdu">Universidad</label>
+            <label for="tituloExp">Cargo</label>
             <input
               type="text"
               class="form-control"
-              id="descripcionEdu"
-              name="descripcionEdu"
+              id="tituloExp"
+              name="tituloExp"
               ngModel
               required
-              placeholder="Universidad"
+              placeholder="Cargo que ocupó"
             />
           </div>
           <div class="form-group">
-            <label for="fechaEdu">Año de egreso</label>
+            <label for="fechaExp">Año de finalización</label>
             <input
               type="text"
               class="form-control"
-              id="fechaEdu"
-              name="fechaEdu"
+              id="fechaExp"
+              name="fechaExp"
               ngModel
               required
-              placeholder="Año de egreso"
-            />
-          </div>
-          <div class="form-group">
-            <label for="imagenEdu">Imagen del centro educativo</label>
-            <input
-              type="text"
-              class="form-control"
-              id="imagenEdu"
-              name="imagenEdu"
-              ngModel
-              required
-              placeholder="URL imagen del centro educativo"
+              placeholder="Año de finalización"
             />
           </div>
           <div class="modal-footer">
             <button
               type="button"
-              id="add-education-form"
+              id="add-experience-form"
               class="btn btn-secondary"
-              data-dismiss="modal"
+              data-bs-dismiss="modal"
             >
               Cancelar
             </button>
@@ -134,4 +116,96 @@
       </div>
     </div>
   </div>
+</div>
+<!-- Modal EDITAR experiencia -->
+<div
+class="modal fade"
+id="editExperienceModal"
+tabindex="-1"
+role="dialog"
+aria-labelledby="updateExperienceModalLabel"
+aria-hidden="true"
+>
+<div class="modal-dialog" role="document">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h5 class="modal-title" id="updateExperienceModalLabel">
+        Editar Experiencia
+      </h5>
+      <button
+        type="button"
+        class="btn-close"
+        data-bs-dismiss="modal"
+        aria-label="Close"
+      ></button>
+    </div>
+    <div class="modal-body">
+      <form #editForm="ngForm">
+        <div class="form-group">
+          <label for="descripcionExp">Empresa</label>
+          <input
+            type="text"
+            class="form-control"
+            id="descripcionExp"
+            name="descripcionExp"
+            ngModel="{{ editExperience?.descripcionExp }}"
+            required
+            placeholder="Empresa"
+          />
+        </div>
+
+        <input
+          type="hidden"
+          ngModel="{{ editExperience?.idExp }}"
+          name="idExp"
+          class="form-control"
+          id="idExp"
+          placeholder=""
+        />
+
+        <div class="form-group">
+          <label for="tituloExp">Cargo</label>
+          <input
+            type="text"
+            class="form-control"
+            id="tituloExp"
+            name="tituloExp"
+            ngModel="{{ editExperience?.tituloExp }}"
+            required
+            placeholder="Cargo"
+          />
+        </div>
+        <div class="form-group">
+          <label for="fechaExp">Año de finalización</label>
+          <input
+            type="text"
+            class="form-control"
+            id="fechaExp"
+            name="fechaExp"
+            ngModel="{{ editExperience?.fechaExp }}"
+            required
+            placeholder="Año de finalización"
+          />
+        </div>
+        <div class="modal-footer">
+          <button
+            type="reset"
+            class="btn btn-secondary"
+            data-bs-dismiss="modal"
+          >
+            Cancelar
+          </button>
+
+          <button
+            (click)="onUpdateExperience(editForm.value)"
+            class="btn btn-primary"
+            data-bs-dismiss="modal"
+          >
+            Guardar
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
 </div>
