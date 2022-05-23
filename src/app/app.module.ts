@@ -10,6 +10,7 @@ import { EducationComponent } from './components/education/education.component';
 import { HttpClientModule } from '@angular/common/http';
 import { SkillsComponent } from './components/skills/skills.component';
 import { NgCircleProgressModule } from 'ng-circle-progress';
+import { PortfolioComponent } from './components/portfolio/portfolio.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { NgCircleProgressModule } from 'ng-circle-progress';
     ExperienceComponent,
     EducationComponent,
     SkillsComponent,
+    PortfolioComponent,
 
   ],
   imports: [
