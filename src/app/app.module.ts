@@ -11,6 +11,12 @@ import { HttpClientModule } from '@angular/common/http';
 import { SkillsComponent } from './components/skills/skills.component';
 import { NgCircleProgressModule } from 'ng-circle-progress';
 import { PortfolioComponent } from './components/portfolio/portfolio.component';
+import { AngularFireModule } from '@angular/fire/compat';
+import { environment } from 'src/environments/environment';
+import { NavBarComponent } from './components/nav-bar/nav-bar.component';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+import { RegisterComponent } from './components/register/register.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +26,8 @@ import { PortfolioComponent } from './components/portfolio/portfolio.component';
     EducationComponent,
     SkillsComponent,
     PortfolioComponent,
+    NavBarComponent,
+    RegisterComponent,
 
   ],
   imports: [
@@ -28,7 +36,10 @@ import { PortfolioComponent } from './components/portfolio/portfolio.component';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    NgCircleProgressModule.forRoot({})
+    NgCircleProgressModule.forRoot({}),
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    NoopAnimationsModule,
+    MatSnackBarModule
   ],
   providers: [],
   bootstrap: [AppComponent]
