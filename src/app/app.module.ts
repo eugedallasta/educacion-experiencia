@@ -17,6 +17,9 @@ import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { RegisterComponent } from './components/register/register.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { HeroComponent } from './components/hero/hero.component';
+import { ProjectsComponent } from './components/projects/projects.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +31,9 @@ import { RegisterComponent } from './components/register/register.component';
     PortfolioComponent,
     NavBarComponent,
     RegisterComponent,
+    FooterComponent,
+    HeroComponent,
+    ProjectsComponent,
 
   ],
   imports: [
