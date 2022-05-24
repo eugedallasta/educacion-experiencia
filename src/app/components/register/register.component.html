@@ -1,10 +1,9 @@
-<div class="container" >
-  <div class="row">
-    <div class="col col-sm-10 col-md-8 mx-auto d-block">
+<div class="container d-flex justify-content-center">
+  <div class="card text-center mt-5">
+    <div class="card-body">
+      <h5 class="card-title text-muted text-center p-1">Primera vez? Por favor regístrate</h5>
       <form>
-        <h1 class="h3 mb-3 fw-normal text-white">First time? Please sign up</h1>
-
-        <div class="form-floating mb-2">
+        <div class="form-floating mb-3">
           <input
             type="text"
             class="form-control"
@@ -14,7 +13,7 @@
           <label for="floatingInput">Name</label>
         </div>
 
-        <div class="form-floating mb-2">
+        <div class="form-floating mb-3">
           <input
             type="email"
             class="form-control"
@@ -24,7 +23,7 @@
           <label for="floatingInput">Email address</label>
         </div>
 
-        <div class="form-floating mb-2">
+        <div class="form-floating mb-3">
           <input
             type="password"
             class="form-control"
@@ -34,14 +33,19 @@
           <label for="floatingPassword">Password</label>
         </div>
         <button
-        class="w-100 btn btn-lg btn-dark"
+        class="w-100 btn btn-lg signin mb-3"
         type="submit"
         (click)="registrarse()">
           Sign up
         </button>
-         <label>Already register? <a [routerLink]="['/login']">Log in here</a></label>
+         <label>Ya estás registrado? <a [routerLink]="['/login']">Sign in</a></label>
       </form>
     </div>
   </div>
 </div>
+
+
+
+
+
 

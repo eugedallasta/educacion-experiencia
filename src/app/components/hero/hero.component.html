@@ -1,1 +1,23 @@
-<p>hero works!</p>
+<div class="container-fluid">
+
+  <div class="col-12 p-2">
+
+    <h3 class="display-6 fw-bold lh-1 text-center">
+      <span #asTitle class="fs-4 text-grey my-3 my-md-5">Hola! Soy </span>
+      <div *ngIf="user">
+        <span class="text-muted my-3 my-md-5 me-2">{{user.nombre}}</span>
+        <span class="text-muted my-3 my-md-5">{{user.apellido}}</span>
+      </div>
+    </h3>
+
+    <div class="d-flex flex-column flex-md-row">
+      <div class="photo-container my-3 mb-md-5 col-md-4" *ngIf="user">
+        <img src= {{user.fotoPerfil}} alt="" class="photo" />
+      </div>
+      <p class=" p-2 lh-lg col-md-6 text-grey fw-semibold" *ngIf="user">
+       {{user.descripcion}}
+      </p>
+    </div>
+
+  </div>
+</div>

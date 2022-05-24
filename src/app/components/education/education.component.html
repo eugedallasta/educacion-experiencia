@@ -1,4 +1,4 @@
-<div class="px-4 py-5" id="hanging-icons">
+<div class="px-4 py-5 bg-secondary" id="hanging-icons">
   <div class="d-flex justify-content-between border-bottom">
     <h2>Educación</h2>
     <!-- boton añadir Educación -->
@@ -130,7 +130,11 @@
     <div class="col d-flex align-items-start" *ngFor="let item of education">
       <div class="feature col">
         <div class="d-inline-flex align-items-center justify-content-center fs-2 mb-3">
-          <img class="img-edu"  src="{{item.imagenEdu}}" alt="Imagen Educación">
+          <img
+            class="img-edu"
+            src="{{ item.imagenEdu }}"
+            alt="Imagen Educación"
+          />
         </div>
         <h4>{{ item.tituloEdu }}</h4>
         <p>

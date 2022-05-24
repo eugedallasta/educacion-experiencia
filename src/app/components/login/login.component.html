@@ -1,5 +1,5 @@
  <div class="container d-flex justify-content-center">
-  <div class="card text-center border border-primary mt-5">
+  <div class="card text-center mt-5">
     <div class="card-body">
       <h5 class="card-title text-muted text-center p-1">Bienvenido a mi portfolio</h5>
       <form class="">
@@ -11,12 +11,12 @@
           <input type="password" class="form-control rounded-3" id="floatingPassword" placeholder="Password" [(ngModel)]="user.password" name="userPassword">
           <label for="floatingPassword">Password</label>
         </div>
-        <button class="w-100 mb-2 btn btn-lg rounded-3 btn-primary" type="submit" (click)="onLogin()">Sign in</button>
-        <small class="text-muted"> Para ingresar puedes registrarte <a routerLink="/register">Aquí</a> o puedes acceder con el mail <span class="fw-bolder">portfolio@eugenia.com</span> y contraseña <span class="fw-bolder">eugenia</span>, o simplemente con tu usuario de Google o GitHub</small>
+        <button class="w-100 mb-2 btn btn-lg rounded-3 signin" type="submit" (click)="onLogin()">Sign in</button>
+        <small class="small"> Para ingresar puedes registrarte <a class="text" routerLink="/register">Aquí</a> o puedes acceder con el mail <span class="fw-bolder">portfolio@eugenia.com</span> y contraseña <span class="fw-bolder">eugenia</span></small>
         <hr class="my-4">
-        <h2 class="fs-5 fw-bold mb-3">Accede tambén a través de:</h2>
+        <h2 class="fs-5 fw-bold mb-3">Accede también a través de:</h2>
         <!-- Google -->
-        <button class="w-100 py-2 mb-2 btn btn-outline-primary rounded-3" type="submit" (click)="onLoginGoogle()">
+        <button class="w-100 py-2 mb-2 btn loginGoogle rounded-3" type="submit" (click)="onLoginGoogle()">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="18"
@@ -32,7 +32,7 @@
           Sign up with Google
         </button>
         <!-- GitHub -->
-        <button class="w-100 py-2 mb-2 btn btn-outline-secondary rounded-3" type="submit"(click)="onLoginGitHub()">
+        <button class="w-100 py-2 mb-2 btn loginGitHub rounded-3" type="submit"(click)="onLoginGitHub()">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="22"

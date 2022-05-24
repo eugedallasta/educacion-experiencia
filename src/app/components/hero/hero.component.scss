@@ -1,0 +1,26 @@
+.photo{
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+  border: 0.25rem solid;
+}
+
+.photo-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #484b54;
+}
+
+.text-grey{
+  color: #484b54;
+}
+
+
+
+@media (min-width: 767px) {
+  .photo{
+      height: 190px;
+      width: 190px;
+  }
+}
