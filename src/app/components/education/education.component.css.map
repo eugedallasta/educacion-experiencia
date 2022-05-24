@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,QAAQ,CAAA;EACN,KAAK,EAAE,IAAI;EACX,MAAM,EAAE,KAAK;EACb,gBAAgB,EAAE,OAAkB;CACrC",
+    "sources": [
+        "education.component.scss"
+    ],
+    "names": [],
+    "file": "education.component.css"
+}

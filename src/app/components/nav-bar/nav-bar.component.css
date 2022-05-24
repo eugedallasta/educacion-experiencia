@@ -1,0 +1,15 @@
+i:hover {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+  color: #69dec3;
+}
+
+.avatar {
+  height: 30px;
+  width: auto;
+}
+
+audio::-webkit-media-controls-panel {
+  background-color: transparent;
+}
+/*# sourceMappingURL=nav-bar.component.css.map */
