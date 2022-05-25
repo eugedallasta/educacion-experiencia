@@ -24,15 +24,15 @@
       aria-hidden="true"
     >
       <div class="modal-dialog" role="document">
-        <div class="modal-content">
+        <div class="modal-content modal-css">
           <div class="modal-header">
             <h5 class="modal-title" id="addEducationModalLabel">
               Añadir Educación
             </h5>
             <button
               type="button"
-              class="btn-close"
-              data-dismiss="modal"
+              class="btn-close green"
+              data-bs-dismiss="modal"
               aria-label="Close"
             ></button>
           </div>
@@ -86,11 +86,11 @@
                   placeholder="URL imagen del centro educativo"
                 />
               </div>
-              <div class="modal-footer">
+              <div class="modal-footer mt-3">
                 <button
                   type="button"
                   id="add-education-form"
-                  class="btn btn-secondary"
+                  class="btn button1"
                   data-dismiss="modal"
                 >
                   Cancelar
@@ -98,7 +98,7 @@
 
                 <button
                   type="submit"
-                  class="btn btn-primary"
+                  class="btn button2"
                   [disabled]="addForm.invalid"
                   data-bs-dismiss="modal"
                 >
@@ -163,14 +163,14 @@
           aria-hidden="true"
         >
           <div class="modal-dialog" role="document">
-            <div class="modal-content">
+            <div class="modal-content modal-css">
               <div class="modal-header">
                 <h5 class="modal-title" id="updateEducationModalLabel">
                   Editar Educación
                 </h5>
                 <button
                   type="button"
-                  class="btn-close"
+                  class="btn-close green"
                   data-bs-dismiss="modal"
                   aria-label="Close"
                 ></button>
@@ -235,10 +235,10 @@
                       placeholder="URL imagen del centro educativo"
                     />
                   </div>
-                  <div class="modal-footer">
+                  <div class="modal-footer mt-3">
                     <button
                       type="reset"
-                      class="btn btn-secondary"
+                      class="btn button1"
                       data-bs-dismiss="modal"
                     >
                       Cancelar
@@ -246,7 +246,7 @@
 
                     <button
                       (click)="onUpdateEducation(editForm.value)"
-                      class="btn btn-primary"
+                      class="btn button2"
                       data-bs-dismiss="modal"
                     >
                       Guardar

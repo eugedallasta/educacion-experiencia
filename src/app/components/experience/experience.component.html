@@ -62,12 +62,12 @@
   aria-hidden="true"
 >
   <div class="modal-dialog" role="document">
-    <div class="modal-content">
+    <div class="modal-content  modal-css">
       <div class="modal-header">
         <h5 class="modal-title" id="addExperienceModalLabel">
           Añadir Experiencia
         </h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        <button type="button" class="btn-close green" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
         <form #addForm="ngForm" (ngSubmit)="onAddExperience(addForm)">
@@ -107,11 +107,11 @@
               placeholder="Año de finalización"
             />
           </div>
-          <div class="modal-footer">
+          <div class="modal-footer mt-3">
             <button
               type="button"
               id="add-experience-form"
-              class="btn btn-secondary"
+              class="btn button1"
               data-bs-dismiss="modal"
             >
               Cancelar
@@ -119,7 +119,7 @@
 
             <button
               type="submit"
-              class="btn btn-primary"
+              class="btn button2"
               [disabled]="addForm.invalid"
               data-bs-dismiss="modal"
             >
@@ -141,14 +141,14 @@ aria-labelledby="updateExperienceModalLabel"
 aria-hidden="true"
 >
 <div class="modal-dialog" role="document">
-  <div class="modal-content">
+  <div class="modal-content modal-css">
     <div class="modal-header">
       <h5 class="modal-title" id="updateExperienceModalLabel">
         Editar Experiencia
       </h5>
       <button
         type="button"
-        class="btn-close"
+        class="btn-close green"
         data-bs-dismiss="modal"
         aria-label="Close"
       ></button>
@@ -201,10 +201,10 @@ aria-hidden="true"
             placeholder="Año de finalización"
           />
         </div>
-        <div class="modal-footer">
+        <div class="modal-footer  mt-3">
           <button
             type="reset"
-            class="btn btn-secondary"
+            class="btn button1"
             data-bs-dismiss="modal"
           >
             Cancelar
@@ -212,7 +212,7 @@ aria-hidden="true"
 
           <button
             (click)="onUpdateExperience(editForm.value)"
-            class="btn btn-primary"
+            class="btn button2"
             data-bs-dismiss="modal"
           >
             Guardar
